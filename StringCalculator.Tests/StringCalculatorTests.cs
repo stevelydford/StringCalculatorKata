@@ -45,6 +45,14 @@ namespace StringCalculator.Tests
         }
 
         [Test]
+        public void AddMethodSumsMultipleCommaSeparatedNumbers()
+        {
+            var result = _stringCalculator.Add("1,1,1");
+
+            Assert.That(result, Is.EqualTo(3));
+        }
+
+        [Test]
         public void AddMethodCanAcceptNewlineCharactersInPlaceOfCommaSeparators()
         {
             var result = _stringCalculator.Add(@"1\n2,3");
